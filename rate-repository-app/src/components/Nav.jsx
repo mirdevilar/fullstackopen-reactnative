@@ -1,7 +1,7 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants';
-import Button from './Button';
 import theme from '../theme';
+import Selector from './Selector';
 
 const stylesheet = StyleSheet.create({
   default: {
@@ -17,8 +17,8 @@ const stylesheet = StyleSheet.create({
 const Nav = () => {
   return (
     <View style={[stylesheet.default]}>
-      <Button state="selected" label="Repositories" />
-      <Button label="Something else" />
+      <Selector label="Repositories" route="/" />
+      <Selector label="Sign in" route="/signin" />
     </View>
   );
 };

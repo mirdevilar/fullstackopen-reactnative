@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Link, useMatch } from 'react-router-native';
 import Text from './Text';
 import theme from '../theme';
 
@@ -15,17 +16,19 @@ const ss = StyleSheet.create({
   },
 });
 
-const Button = ({ state, label }) => {
+const Selector = ({ label, route }) => {
+  const match = useMatch(route);
+
   const styles = [
     ss.default,
-    state === 'selected' && ss.selected,
+    match && ss.selected,
   ];
 
   return (
-    <Pressable style={styles}>
+    <Link to={route} style={styles}>
       <Text>{label}</Text>
-    </Pressable>
+    </Link>
   );
 };
 
-export default Button;
+export default Selector;
