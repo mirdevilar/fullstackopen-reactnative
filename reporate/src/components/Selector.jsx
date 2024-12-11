@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Link, useMatch } from 'react-router-native';
+import { useState } from 'react';
 import Text from './Text';
 import theme from '../theme';
 
@@ -9,6 +10,7 @@ const ss = StyleSheet.create({
     backgroundColor: theme.colors.bgContent,
     paddingVertical: 6,
     paddingHorizontal: theme.paddings.primary,
+    marginRight: theme.separations.secondary,
     borderRadius: theme.paddings.primary,
   },
   selected: {
@@ -25,7 +27,11 @@ const Selector = ({ label, route }) => {
   ];
 
   return (
-    <Link to={route} style={styles}>
+    <Link
+      to={route}
+      underlayColor="none"
+      style={styles}
+    >
       <Text>{label}</Text>
     </Link>
   );
