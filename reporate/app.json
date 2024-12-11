@@ -1,10 +1,6 @@
 {
   "expo": {
-<<<<<<< HEAD:rate-repository-app/app.json
-    "name": "rate-repository-app",
-=======
     "name": "reporate",
->>>>>>> 8696f39 (reinit w/ all up-to-date & app renaming):reporate/app.json
     "slug": "reporate",
     "version": "1.0.0",
     "orientation": "portrait",
