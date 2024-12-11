@@ -4,24 +4,27 @@ import theme from '../theme';
 import Selector from './Selector';
 
 const ss = StyleSheet.create({
-  default: {
-    // display: 'flex',
-    // flexDirection: 'row',
-    // overflow: 'auto',
-    // gap: theme.separations.secondary,
-    // paddingLeft: theme.separations.primary,
+  bar: {
     paddingBottom: theme.separations.primary,
     paddingTop: Constants.statusBarHeight + theme.separations.primary,
+  },
+  scrollView: {
+    paddingLeft: theme.separations.primary,
+    paddingRight: theme.separations.primary - theme.separations.secondary,
   },
 });
 
 const Nav = () => {
   return (
-    <View horizontal="true" style={ss.default}>
-      <ScrollView horizontal="true">
+    <View style={ss.bar}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={ss.scrollView}
+      >
         <Selector label="Repositories" route="/" />
+        <Selector label="Create a review" route="/create" />
         <Selector label="Sign in" route="/signin" />
-        <Selector label="Add review" route="/" />
       </ScrollView>
     </View>
   );

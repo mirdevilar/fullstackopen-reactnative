@@ -1,19 +1,21 @@
 {
   "expo": {
+<<<<<<< HEAD:rate-repository-app/app.json
     "name": "rate-repository-app",
+=======
+    "name": "reporate",
+>>>>>>> 8696f39 (reinit w/ all up-to-date & app renaming):reporate/app.json
     "slug": "reporate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     },
