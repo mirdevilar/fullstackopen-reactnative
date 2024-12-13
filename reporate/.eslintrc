@@ -4,6 +4,8 @@
     "arrow-body-style": "off",
     "object-curly-newline": "off",
 
+    "import/no-extraneous-dependencies": "off",
+
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": "off",
     "react/jsx-props-no-spreading": "off",
