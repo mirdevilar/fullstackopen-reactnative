@@ -1,7 +1,20 @@
-import { Pressable, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { useFormik } from 'formik';
 
+import theme from '../theme'
+import Button from './Button';
+import Card from './Card';
+import JustifyRight from './JustifyRight'
 import Text from './Text';
+
+const ss = StyleSheet.create({
+	container: {
+		marginHorizontal: theme.separations.primary,
+	},
+	input: {
+		color: theme.colors.textPrimary,
+	}
+})
 
 const initialValues = {
   username: '',
@@ -15,27 +28,29 @@ const SignInForm = ({ onSubmit }) => {
   });
 
   return (
-    <View>
+    <Card style={ss.container}>
       <TextInput
         onChange={formik.handleChange('username')}
         placeholder="Username"
         value={formik.values.username}
+        style={ss.input}
       />
       <TextInput
         onChange={formik.handleChange('password')}
         placeholder="Password"
         secureTextEntry
         value={formik.values.password}
+        style={ss.input}
       />
 
-      <Pressable onPress={formik.handleSubmit}>
-        <Text>Yes</Text>
-      </Pressable>
-    </View>
+			<JustifyRight>
+		    <Button secondary onPress={formik.handleSubmit} label="Submit" />
+			</JustifyRight>
+    </Card>
   );
 };
 
-const SignIn = () => {
+const SignInPage = () => {
   const onSubmit = (values) => {
     console.log(values);
   };
@@ -45,4 +60,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignInPage;

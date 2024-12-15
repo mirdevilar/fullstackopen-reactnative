@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import { Navigate, Route, Routes } from 'react-router-native';
 
-import RepositoryList from './RepositoryList';
-import theme from '../theme';
 import Nav from './Nav';
-import SignIn from './SignIn';
+import RepositoryList from './RepositoryList';
+import SignInPage from './SignInPage';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
   body: {
@@ -24,7 +24,7 @@ const Main = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<RepositoryList />} />
-        <Route path="signin" element={<SignIn />} />
+        <Route path="signin" element={<SignInPage />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
