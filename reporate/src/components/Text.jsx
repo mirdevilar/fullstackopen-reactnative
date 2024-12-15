@@ -20,10 +20,14 @@ const ss = StyleSheet.create({
   italic: {
     fontStyle: 'italic',
   },
+  error: {
+    color: theme.colors.error,
+    fontSize: theme.fontSizes.tiny,
+  },
 });
 
 const Text = ({
-  fontSize, b, i, children, style, ...props
+  fontSize, b, i, error, children, style, ...props
 }) => {
   const styles = [
     ss.default,
@@ -31,6 +35,7 @@ const Text = ({
     fontSize === 'tiny' && ss.fontSizeTiny,
     b && ss.bold,
     i && ss.italic,
+    error && ss.error,
     style,
   ];
 

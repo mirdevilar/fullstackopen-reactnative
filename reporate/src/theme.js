@@ -5,6 +5,8 @@ const theme = {
     bgBody: '#192025',
     bgContent: '#26313b',
     bgAccent: '#2a7ac3',
+
+    error: '#ff4444',
   },
   fontSizes: {
     tiny: 11,

@@ -1,20 +1,30 @@
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
-import theme from '../theme'
+import theme from '../theme';
 import Button from './Button';
 import Card from './Card';
-import JustifyRight from './JustifyRight'
+import JustifyRight from './JustifyRight';
 import Text from './Text';
 
 const ss = StyleSheet.create({
-	container: {
-		marginHorizontal: theme.separations.primary,
-	},
-	input: {
-		color: theme.colors.textPrimary,
-	}
-})
+  container: {
+    marginHorizontal: theme.separations.primary,
+  },
+  input: {
+    color: theme.colors.textPrimary,
+  },
+  errorInput: {
+    borderBottomColor: theme.colors.error,
+    borderBottomWidth: 1,
+  },
+});
+
+const validationSchema = Yup.object().shape({
+  username: Yup.string().required('Please enter a username'),
+  password: Yup.string().required('Please enter a password'),
+});
 
 const initialValues = {
   username: '',
@@ -24,28 +34,37 @@ const initialValues = {
 const SignInForm = ({ onSubmit }) => {
   const formik = useFormik({
     initialValues,
+    validationSchema,
     onSubmit,
   });
 
   return (
     <Card style={ss.container}>
       <TextInput
-        onChange={formik.handleChange('username')}
+        onBlur={formik.handleBlur('username')}
+        onChangeText={formik.handleChange('username')}
         placeholder="Username"
+        style={[ss.input, formik.errors.username ? ss.errorInput : null]}
         value={formik.values.username}
-        style={ss.input}
       />
+      {formik.touched.username && formik.errors.username && (
+        <Text error>{formik.errors.username}</Text>
+      )}
       <TextInput
-        onChange={formik.handleChange('password')}
+        onBlur={formik.handleBlur('password')}
+        onChangeText={formik.handleChange('password')}
         placeholder="Password"
         secureTextEntry
+        style={[ss.input, formik.errors.password ? ss.errorInput : null]}
         value={formik.values.password}
-        style={ss.input}
       />
+      {formik.touched.password && formik.errors.password && (
+        <Text error>{formik.errors.password}</Text>
+      )}
 
-			<JustifyRight>
-		    <Button secondary onPress={formik.handleSubmit} label="Submit" />
-			</JustifyRight>
+      <JustifyRight>
+        <Button secondary onPress={formik.handleSubmit} label="Submit" />
+      </JustifyRight>
     </Card>
   );
 };
