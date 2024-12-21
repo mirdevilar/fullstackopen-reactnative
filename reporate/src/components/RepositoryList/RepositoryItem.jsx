@@ -1,9 +1,9 @@
 import { Image, StyleSheet, View } from 'react-native';
-import Text from './Text';
-import Card from './Card';
-import Subheading from './Subheading';
+import Text from '../Text';
+import Card from '../Card';
+import Subheading from '../Subheading';
 import StatCounter from './StatCounter';
-import theme from '../theme';
+import theme from '../../theme';
 
 const ss = StyleSheet.create({
   main: {

@@ -6,7 +6,6 @@ import theme from '../theme';
 
 const ss = StyleSheet.create({
   default: {
-    fontWeight: theme.fontWeights.bold,
     backgroundColor: theme.colors.bgContent,
     paddingVertical: 6,
     paddingHorizontal: theme.paddings.primary,
@@ -32,7 +31,7 @@ const Selector = ({ label, route }) => {
       underlayColor="none"
       style={styles}
     >
-      <Text>{label}</Text>
+      <Text b>{label}</Text>
     </Link>
   );
 };
