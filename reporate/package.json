@@ -13,6 +13,7 @@
     "@expo/metro-config": "^0.19.8",
     "@expo/metro-runtime": "~4.0.0",
     "dotenv": "^16.4.7",
+    "eslint": "^8.57.1",
     "expo": "~52.0.18",
     "expo-constants": "^17.0.3",
     "expo-status-bar": "~2.0.0",
@@ -27,7 +28,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "eslint": "^9.17.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
