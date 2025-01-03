@@ -1,4 +1,4 @@
-### Installation
+## Installation
 
 1. Install [rate-repository-api](https://github.com/fullstack-hy2020/rate-repository-api) separately and run it, all according to the repo's instructions.
 2. Create a `.env` file in the root directory of the app, where `package.json` is located.

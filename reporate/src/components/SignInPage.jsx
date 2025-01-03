@@ -2,11 +2,14 @@ import { StyleSheet, TextInput } from 'react-native';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
+import { useMutation } from '@apollo/client';
 import theme from '../theme';
 import Button from './Button';
 import Card from './Card';
 import JustifyRight from './JustifyRight';
 import Text from './Text';
+import useSignIn from '../hooks/useSignIn';
+import { AUTHENTICATE } from '../graphql/mutations';
 
 const ss = StyleSheet.create({
   container: {
@@ -70,8 +73,17 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 const SignInPage = () => {
-  const onSubmit = (values) => {
-    console.log(values);
+  const [signIn] = useSignIn();
+
+  const onSubmit = async (values) => {
+    const { username, password } = values;
+
+    try {
+      const { data } = await signIn({ username, password });
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
