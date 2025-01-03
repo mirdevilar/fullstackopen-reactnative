@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import Constants from 'expo-constants'
+import Constants from 'expo-constants';
 
 const createApolloClient = () => {
   return new ApolloClient({
