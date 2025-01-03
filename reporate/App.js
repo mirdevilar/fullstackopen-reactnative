@@ -5,8 +5,10 @@ import { StatusBar } from 'expo-status-bar';
 import createApolloClient from './src/utils/apolloClient';
 
 import Main from './src/components/Main';
+import AuthStorage from './src/utils/authStorage';
 
-const apolloClient = createApolloClient();
+const authStorage = new AuthStorage();
+const apolloClient = createApolloClient(authStorage);
 
 function App() {
   return (

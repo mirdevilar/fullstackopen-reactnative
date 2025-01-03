@@ -2,14 +2,12 @@ import { StyleSheet, TextInput } from 'react-native';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { useMutation } from '@apollo/client';
 import theme from '../theme';
 import Button from './Button';
 import Card from './Card';
 import JustifyRight from './JustifyRight';
 import Text from './Text';
 import useSignIn from '../hooks/useSignIn';
-import { AUTHENTICATE } from '../graphql/mutations';
 
 const ss = StyleSheet.create({
   container: {
