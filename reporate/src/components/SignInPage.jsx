@@ -2,6 +2,7 @@ import { StyleSheet, TextInput } from 'react-native';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
+import { useNavigate } from 'react-router-native';
 import theme from '../theme';
 import Button from './Button';
 import Card from './Card';
@@ -71,14 +72,15 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 const SignInPage = () => {
+  const navigate = useNavigate();
   const [signIn] = useSignIn();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
 
     try {
-      const { data } = await signIn({ username, password });
-      console.log(data);
+      await signIn({ username, password });
+      navigate('/');
     } catch (e) {
       console.log(e);
     }

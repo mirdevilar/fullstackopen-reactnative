@@ -24,7 +24,7 @@ const Main = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<RepositoryList />} />
-        <Route path="signin" element={<SignInPage />} />
+        <Route path="/signin" element={<SignInPage />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
