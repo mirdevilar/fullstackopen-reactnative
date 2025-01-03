@@ -1,7 +1,11 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
 import Constants from 'expo-constants';
+
 import theme from '../theme';
+import Button from './Button';
 import Selector from './Selector';
+import useSignOut from '../hooks/useSignOut';
+import useUser from '../hooks/useUser';
 
 const ss = StyleSheet.create({
   bar: {
@@ -15,6 +19,12 @@ const ss = StyleSheet.create({
 });
 
 const Nav = () => {
+  // check is user signed in
+  const { user } = useUser();
+  const isSignedIn = !!user;
+
+  const signOut = useSignOut();
+
   return (
     <View style={ss.bar}>
       <ScrollView
@@ -24,6 +34,9 @@ const Nav = () => {
       >
         <Selector label="Repositories" route="/" />
         <Selector label="Create a review" route="/create" />
+        {isSignedIn
+          ? <Button label="Sign out" route="/" onPress={signOut} />
+          : <Selector label="Sign in" route="/signin" />}
         <Selector label="Sign in" route="/signin" />
       </ScrollView>
     </View>

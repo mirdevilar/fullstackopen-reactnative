@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { Link, useMatch } from 'react-router-native';
-import { useState } from 'react';
 import Text from './Text';
 import theme from '../theme';
 
@@ -17,7 +16,7 @@ const ss = StyleSheet.create({
   },
 });
 
-const Selector = ({ label, route }) => {
+const Selector = ({ label, onPress, route }) => {
   const match = useMatch(route);
 
   const styles = [
@@ -30,6 +29,7 @@ const Selector = ({ label, route }) => {
       to={route}
       underlayColor="none"
       style={styles}
+      onPress={onPress}
     >
       <Text b>{label}</Text>
     </Link>
