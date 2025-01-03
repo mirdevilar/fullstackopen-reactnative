@@ -15,6 +15,7 @@ export const GET_REPOS = gql`
           ownerName
           ratingAverage
           reviewCount
+          stargazersCount
         }
       }
     }

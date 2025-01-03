@@ -13,9 +13,9 @@ const ss = StyleSheet.create({
     width: 'auto',
   },
   secondary: {
-  		backgroundColor: theme.colors.bgBody,
-  		borderRadius: theme.paddings.primary,
-  	}
+    backgroundColor: theme.colors.bgBody,
+    borderRadius: theme.paddings.primary,
+  },
 });
 
 const Button = ({ label, onPress, secondary }) => {
