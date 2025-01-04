@@ -1,4 +1,5 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
+// eslint-disable-next-line import/default, import/no-named-as-default, import/no-named-as-default-member
 import Constants from 'expo-constants';
 
 import theme from '../theme';
