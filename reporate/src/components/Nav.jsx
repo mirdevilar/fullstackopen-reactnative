@@ -38,7 +38,6 @@ const Nav = () => {
         {isSignedIn
           ? <Button label="Sign out" route="/" onPress={signOut} />
           : <Selector label="Sign in" route="/signin" />}
-        <Selector label="Sign in" route="/signin" />
       </ScrollView>
     </View>
   );
